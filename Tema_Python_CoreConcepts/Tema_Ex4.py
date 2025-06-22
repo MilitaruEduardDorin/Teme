@@ -6,6 +6,7 @@ script_dir = os.path.dirname(os.path.abspath(__file__))
 url_file_path = os.path.join(script_dir, "urls.txt")
 
 urls = [
+"https://www.google.com/",
 "https://httpstat.us/201",
 "https://httpstat.us/400",
 "https://httpstat.us/500",
@@ -47,7 +48,7 @@ status_error=[]
 
 for url in urls:
     try:
-        raspuns=requests.get(url)#, timeout=90)
+        raspuns=requests.get(url, timeout=30)
         code_status=raspuns.status_code
 # 4. Daca url-ul a intors un status de success (intre 200 si 299) adauga url-ul intr-un fisier cu numele success.txt 
         if 200 <= code_status <= 299:
