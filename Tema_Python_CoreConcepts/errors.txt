@@ -1,0 +1,8 @@
+https://httpstat.us/201 Exceptie: HTTPSConnectionPool(host='httpstat.us', port=443): Read timed out. (read timeout=90)
+https://httpstat.us/400
+https://httpstat.us/500 Exceptie: HTTPSConnectionPool(host='httpstat.us', port=443): Read timed out. (read timeout=90)
+https://httpstat.us/404 Exceptie: HTTPSConnectionPool(host='httpstat.us', port=443): Read timed out. (read timeout=90)
+https://httpstat.us/201 Exceptie: HTTPSConnectionPool(host='httpstat.us', port=443): Read timed out. (read timeout=90)
+https://httpstat.us/503 Exceptie: HTTPSConnectionPool(host='httpstat.us', port=443): Read timed out. (read timeout=90)
+https://httpstat.us/200 Exceptie: HTTPSConnectionPool(host='httpstat.us', port=443): Read timed out. (read timeout=90)
+https://httpstat.us/303
