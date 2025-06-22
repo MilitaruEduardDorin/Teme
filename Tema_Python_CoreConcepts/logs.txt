@@ -1,0 +1,5 @@
+INFO: Server started successfully.
+WARNING: Disk space low.
+ERROR: Unable to connect to database.
+INFO: Scheduled backup completed.
+ERROR: Failed to send email.
