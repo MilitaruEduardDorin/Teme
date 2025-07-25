@@ -22,6 +22,7 @@ print("Variabila de timpul: ", type(list).__name__)
 print("Variabila de timpul: ", type(set).__name__)
 print("Variabila de timpul: ", type(Dictionary).__name__)
 print("Variabila de timpul: ", type(Tuple).__name__)
+print(list)
 
 # 3. Creați o alta variabila cu numele documentație de tip string pe mai multe linii in care sa puneti pentru fiecare variabila ceva de genul: 
 

@@ -6,4 +6,3 @@ https://httpstat.us/201 Exceptie: HTTPSConnectionPool(host='httpstat.us', port=4
 https://httpstat.us/503 Exceptie: HTTPSConnectionPool(host='httpstat.us', port=443): Read timed out. (read timeout=30)
 https://httpstat.us/200 Exceptie: HTTPSConnectionPool(host='httpstat.us', port=443): Read timed out. (read timeout=30)
 https://httpstat.us/303 Exceptie: HTTPSConnectionPool(host='httpstat.us', port=443): Read timed out. (read timeout=30)
-test Tema2_Ex3.py
