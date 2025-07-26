@@ -1,0 +1,28 @@
+##Construiți o imagine de docker simpla care printeaza mesajul “Salut din container” (folosind comanda echo).
+##Folositi imaginea de baza alpine. De ce credeți ca am folosit aceasta imagine?
+##Rulati imagine si incercati sa-i dati cat mai putin cpu si memory.
+##Care sunt valorile cele mai mici pentru CPU si memory pe care ați reușit sa i le dați containerului?
+
+vim Dockerfile.Ex4
+
+	FROM alpine:latest
+
+	CMD ["echo", "Salut din container!"]
+
+docker build -f Dockerfile.Ex4 -t militarueduarddorin/ex4-docker-image .
+
+docker run militarueduarddorin/ex4-docker-image:latest
+
+docker run militarueduarddorin/ex4-docker-image:latest sleep 10 #Dorin: Nu mai afiseaza mesajul
+
+docker run -d --cpus 0.01 -m 6M militarueduarddorin/ex4-docker-image:latest 
+
+##Bonus: Dați push la imagine în contul vostru de DockerHub.
+
+docker tag nginx_green militarueduarddorin/nginx_green #Dorin: Pt a da push si la imaginile create la exercitiul 3
+docker tag nginx_blue militarueduarddorin/nginx_blue #Dorin: Pt a da push si la imaginile create la exercitiul 3
+
+docker push militarueduarddorin/nginx_green
+docker push militarueduarddorin/nginx_blue
+docker push militarueduarddorin/ex4-docker-image
+

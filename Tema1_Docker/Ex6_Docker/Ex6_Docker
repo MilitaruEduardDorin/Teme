@@ -1,0 +1,37 @@
+#Construiți două imagini Docker separate, ambele pornind de la imaginea de bază ubuntu.
+#Prima imagine va folosi instrucțiunea ENTRYPOINT cu comanda echo.
+#A doua imagine va folosi instrucțiunea CMD cu comanda echo.
+#	În ambele cazuri, atât ENTRYPOINT, cât și CMD trebuie să conțină doar comanda echo.
+#Rulați fiecare imagine separat și testați următoarele situații:
+#	Furnizați argumentul Salut și verificați rezultatul afișat în terminal.
+#	Furnizați comanda ls ca argument și observați comportamentul containerului.
+
+vim Dockerfile.Ex6_entrypoint
+	
+	FROM ubuntu
+
+	ENTRYPOINT ["echo"]
+
+vim Dockerfile.Ex6_cmd
+
+	FROM ubuntu
+
+	CMD ["echo"]
+
+docker build -f Dockerfile.Ex6_entrypoint -t militarueduarddorin/ex6-entrypoint-image .
+docker build -f Dockerfile.Ex6_cmd -t militarueduarddorin/ex6-cmd-image .
+
+docker run militarueduarddorin/ex6-entrypoint-image:latest Salut
+	#A returnat: Salut. Pt ca a fost tratat ca argument pt echo din ENTRYPOINT
+
+docker run militarueduarddorin/ex6-entrypoint-image:latest ls
+	#A returnat: ls . Pt ca a fost tratat ca argument pt echo din ENTRYPOINT
+
+eu@DevOps-ITSchool:~/ITSchool/Teme/Tema1_Docker/Ex6_Docker$ docker run militarueduarddorin/ex6-cmd-image:latest Salut
+	#a dat eroare: docker: Error response from daemon:...: exec: "Salut": executable file not found in $PATH: unknown
+	#Pt ca Salut nu e o comanda de Linux
+
+docker run militarueduarddorin/ex6-cmd-image:latest ls -alh
+	#A facut ls -alh pe / . Pt ca inlocuieste comanda echo din CMD
+
+#Dorin: Le-am facut si push la imaginile nou create in Ex6

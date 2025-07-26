@@ -1,0 +1,8 @@
+#Alegeți orice alta imagine de pe docker hub ce nu a fost folosită la curs. 
+#Încercați sa înțelegeți ce face imaginea și cum se rulează local. 
+#Rulati imaginea local. 
+
+docker pull jupyter/base-notebook
+
+docker history jupyter/base-notebook
+

@@ -26,7 +26,7 @@ vim index_blue.html
 	  </style>
 	</head>
 	<body>
-	  <h1>Welcome to My Nginx Container</h1>
+	  <h1>Welcome to My Blue Nginx Container</h1>
 	  <p>This page is served from a Docker container running Nginx.</p>
 	</body>
 	</html>
