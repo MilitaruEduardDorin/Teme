@@ -1,0 +1,13 @@
+#Rulați imaginea de docker cu numele hello-world si verificati logurile.
+#Verificati apoi dacă mai rulează containerul.
+#Stergeti imagine hello-world din local.
+
+echo 'Inceput exercitiu 1'
+docker pull hello-world
+docker run hello-world:latest 
+docker ps -a
+docker logs f2c29e9e3b0c
+docker ps -a
+docker rm f2c29e9e3b0c 9c4124b6c285
+docker rmi hello-world:latest 
+

@@ -1,0 +1,15 @@
+#Rulati un container de busybox folosind comanda sleep in detached mode. Puneți un nume containerului. Ce observati?
+#Accesați containerul în linie de comanda și listați procesele.
+#Omorati și sterge-ti containerul.
+
+docker pull busybox
+docker run --name Busy_Sleeping -d busybox sleep Infinity
+docker exec -it Busy_Sleeping sh
+	/ # ps
+		PID   USER     TIME  COMMAND
+    		1 root      0:00 sleep Infinity
+    		7 root      0:00 sh
+   		13 root      0:00 ps
+	/ # exit
+docker kill Busy_Sleeping
+docker rm Busy_Sleeping 
