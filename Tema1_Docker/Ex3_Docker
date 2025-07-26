@@ -1,5 +1,0 @@
-Porniti un server  nginx cu numele blue pe portul 8080 si altul cu numele green pe portul 8090. 
-Pentru fiecare server serviți un fișier static index.html din local cu background blue respectiv green. 
-Accesati-le in browser.
-
-

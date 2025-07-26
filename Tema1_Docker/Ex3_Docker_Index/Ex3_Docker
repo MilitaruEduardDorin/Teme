@@ -1,0 +1,82 @@
+##Porniti un server  nginx cu numele blue pe portul 8080 si altul cu numele green pe portul 8090. 
+##Pentru fiecare server serviți un fișier static index.html din local cu background blue respectiv green. 
+##Accesati-le in browser.
+
+docker pull nginx
+
+mkdir Ex3_Docker_Index
+
+cd Ex3_Docker_Index/
+
+vim index_blue.html
+
+	<!DOCTYPE html>
+	<html lang="en">
+	<head>
+	  <meta charset="UTF-8">
+	  <title>My Nginx Page</title>
+	  <style>
+	    body {
+	      background-color: #007BFF; /* Bootstrap blue */
+	      color: white;
+	      font-family: Arial, sans-serif;
+	      text-align: center;
+	      padding-top: 100px;
+	    }
+	  </style>
+	</head>
+	<body>
+	  <h1>Welcome to My Nginx Container</h1>
+	  <p>This page is served from a Docker container running Nginx.</p>
+	</body>
+	</html>
+
+vim index_green.html
+
+	<!DOCTYPE html>
+	<html lang="en">
+	<head>
+	  <meta charset="UTF-8">
+	  <title>My Green Nginx Page</title>
+	  <style>
+	    body {
+	      background-color: #28a745; /* Bootstrap green */
+	      color: white;
+	      font-family: Arial, sans-serif;
+	      text-align: center;
+	      padding-top: 100px;
+	    }
+	  </style>
+	</head>
+	<body>
+	  <h1>Welcome to My Green Nginx Container</h1>
+	  <p>This page is served from a Docker container running Nginx with a green background.</p>
+	</body>
+	</html>
+
+vim Dockerfile.blue
+
+	FROM nginx
+
+	RUN rm /usr/share/nginx/html/index.html
+
+	COPY index_blue.html /usr/share/nginx/html/index.html
+
+vim  Dockerfile.green
+
+	FROM nginx
+
+	RUN rm /usr/share/nginx/html/index.html
+
+	COPY index_green.html /usr/share/nginx/html/index.html
+
+docker build -f Dockerfile.blue -t nginx_blue .
+
+docker build -f Dockerfile.green -t nginx_green .
+
+docker run -d -p 8080:80 --name nginx_blue nginx_blue
+
+docker run -d -p 8090:80 --name nginx_green nginx_green
+
+firefox --new-tab "http://localhost:8080 http://localhost:8090"
+
