@@ -1,0 +1,5 @@
+FROM python:slim
+
+COPY Ex5_file_mover.py .
+
+CMD ["python", "Ex5_file_mover.py"]
